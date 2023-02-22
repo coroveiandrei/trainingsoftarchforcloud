@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccounts": {
+      "value": [
+        {
+          "name": "arcacstor",
+          "blobs": [],
+          "shares": [],
+          "queues": [],
+          "tables": [],
+          "kind": "StorageV2",
+          "sku": {
+            "name": "Standard_LRS",
+            "tier": "Standard"
+          },
+          "properties": {
+            "publicNetworkAccess": "Enabled",
+            "networkAcls": {}
+          }
+        }
+      ]
+    }
+  }
+}
