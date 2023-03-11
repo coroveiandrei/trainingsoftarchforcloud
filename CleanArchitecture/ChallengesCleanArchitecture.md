@@ -1,6 +1,6 @@
 # Clean Architecture Challenges
 
-Map & start the solution:
+### Map & start the solution:
 1. Clone the repo at https://github.com/coroveiandrei/trainingsoftarchforcloud/tree/main/CleanArchitecture
 2. Open up Visual Studio Community 2022 with .net core 6 installed and build the project
 3. Go to Azure Portal and grab the connection string of Azure SQL DB created last lab. If you don't have it, you can always redeploy the template
@@ -31,7 +31,7 @@ Hint: Scan through the project, find the command validator place and add a new v
 ### Challenge #3
 The end users want to receive an email when they add a new notification in case a new field called "Notify" is active. For the sake of simplicity we will call a webhook for notifications, instead of sending emails. The service INotificationService is already in place but there is something wrong with it. Can you spot what it is?
 
-Hint #1: In order to use notifications, you can use events.
+Hint: In order to use notifications, you can use events.
 
 ### Challenge #4
 Deploy this architecture on an Azure stack and run it on Azure. What services from the ones created previously would you need?
