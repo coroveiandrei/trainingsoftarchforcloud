@@ -8,11 +8,12 @@ Connection string should look like:
 Server=tcp:arcacsqlserver.database.windows.net,1433;Initial Catalog=arcacsqldb;Persist Security Info=False;User ID=andrei;Password=mypass;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 4. In SQL Server also make sure firewall rules are open for your ip address
 5. Go to appsettings.json and replace ToDoDatabase with the connection string above
-6. Open Package Manager Console and run Update-Database, this should create the database schema
-7. Set CleanArc.WebUI as startup project and run the project
-8. Since there is no UI, please add /swagger in the URL, this will display the swagger page
-9. Try the login endpoint with user: admin and password: P@ssw0rd
-10. Try to add a new ToDo and then list it. If it succeds, the project is fully configured 
+6. Right click on CleanArc.WebUI and select Set as Startup Project
+7. Open Package Manager Console and run Update-Database, this should create the database schema
+8. Set CleanArc.WebUI as startup project and run the project
+9. Since there is no UI, please add /swagger in the URL, this will display the swagger page
+10. Try the login endpoint with user: admin and password: P@ssw0rd
+11. Try to add a new ToDo and then list it. If it succeds, the project is fully configured 
 
 
 ### Chalenge #1 
