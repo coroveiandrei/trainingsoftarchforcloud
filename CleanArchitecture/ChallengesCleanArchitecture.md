@@ -37,8 +37,8 @@ Hint: In order to use notifications, you can use events.
 
 ### Challenge #4
 Deploy this architecture on an Azure stack and run it on Azure. What services from the ones created previously would you need?
-Hint: Right click publish from Visual studio and either select your subscription, or use the import publish profile option (profile can be downloaded from Azure)
 
+Hint: Right click publish from Visual studio and either select your subscription, or use the import publish profile option (profile can be downloaded from Azure)
 
 Hint2: In configuration configure ASPNETCORE_ENVIRONMENT: DEVELOPMENT
 
