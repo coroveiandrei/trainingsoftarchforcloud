@@ -24,3 +24,23 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 ### Chalenge #2 - Inspect Service Invocation
 
+Inspect the Invoke between FineCollectionService and VehicleRegistrationService
+1. In CollectionController a call is made to proxy vechicleRegistrationService.GetVehicleInfo
+2. Get Vechicle info calls the Vechicle microservice using HTTP Client. It also uses the auto deserialization from Json
+3. Inspect how VehicleRegistrationService is registered in container. Is it singleton, is it transient? Why? 
+4. Inspect in Program.cs how the HTTPClient is created
+
+
+### Challenge #3 - DAPR Pub/Sub
+1. For the publisher part inspect TrafficController.VehicleExitAsync, the last lines of code of the method.
+2. For the subscriber part inspect CollectionController.CollectFine
+3. For the configuration part, navigate to /dapr/components/pubsub.yaml
+ 
+
+### Challenge #4 - Inspect Bindings
+
+
+### Challenge #5 - Inspect Monitoring
+
+
+### Challenge #6 - Inspect Actors
