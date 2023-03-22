@@ -1,8 +1,7 @@
 # Microservices
 
 ### Map & start the solution:
-1. Clone the repo at https://github.com/edwinvw/dapr-traffic-control. Use branch demo/updateconf
-git clone https://github.com/edwinvw/dapr-traffic-control
+1. Clone the repo at https://github.com/edwinvw/dapr-traffic-control.
 2. Make sure you have DAPR, Docker Desktop and .NET 7 SDK installed
 DAPR Cli - https://docs.dapr.io/getting-started/install-dapr-cli/
 Docker Desktop - https://www.docker.com/products/docker-desktop/
