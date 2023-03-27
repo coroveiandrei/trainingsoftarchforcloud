@@ -10,7 +10,7 @@ Connect to portal.azure.com and create a new resource group called rg_arc_[yourn
 1. Open up visual studio code
 2. Open up folder in vs code C:\work\softwarearchforcloud\infracode
 3. In storageparams.json, line 8, replace the name of the storage account with: arc[yourinitials]stor 
-4. In a terminal, run the commands:
+4. In VSCode terminal, run the commands:
 
 az login
 az deployment group what-if --resource-group  rg_arc_[yournameinitials] --template-file 1storage.bicep --parameters .\config\storageparams.json
