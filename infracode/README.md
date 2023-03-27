@@ -13,9 +13,11 @@ Connect to portal.azure.com and create a new resource group called rg_arc_[yourn
 4. In VSCode terminal, run the commands:
 
 az login
+
 az deployment group what-if --resource-group  rg_arc_[yournameinitials] --template-file 1storage.bicep --parameters .\config\storageparams.json
 This command will only show you what happens in case of a deployment
 
 Now create the actual resources
+
 az deployment group create  --resource-group  rg_arc_[yournameinitials] --template-file 1storage.bicep --parameters .\config\storageparams.json
 
