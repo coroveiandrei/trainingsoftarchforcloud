@@ -14,6 +14,15 @@ Login with:
 user: admin@webdotnet.com
 password: P@ssw0rd
 
+The overall diagram of Event sourcing is the following.
+
+![image](https://user-images.githubusercontent.com/37452422/228434377-247823ba-0591-4df3-8138-898ccc2f5202.png)
+
+Write path goes to EventStore
+
+Read path goes to Projections in SQLserver
+
+Syncronization is done through Service Bus.
 
 ### Challenge #1: Write path
 In the first challenge we will create the write path. The data will go towards the Event Store in table storage.
@@ -35,6 +44,9 @@ User B: has version of stock 1
 
 User A and user B update the version at the same time having version 1.
 One of the users should succeed, while the other should get "Data was changed by another user".
+
+![image](https://user-images.githubusercontent.com/37452422/228435273-02659f5f-beb7-4160-9c2e-fa229a06c32c.png)
+
 
 There are two places where this check is done:
 1. In command validator - we should check that the version that comes from projection matches the latest version from the aggregate. If not, data was changed in the meantime.
