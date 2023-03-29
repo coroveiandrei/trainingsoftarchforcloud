@@ -1,20 +1,23 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+## Step 1 Create Azure Subcription
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+If you don't have an active Azure Subscription, you can create one at:
+https://azure.microsoft.com/en-us/free/
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Connect to portal.azure.com and create a new resource group called rg_arc_[yournameinitials]
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Step 2 Deploy Storage from Bicep template
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+1. Open up visual studio code
+2. Open up folder in vs code C:\work\softwarearchforcloud\infracode
+3. In storageparams.json, line 8, replace the name of the storage account with: arc[yourinitials]stor 
+4. In VSCode terminal, run the commands:
+
+az login
+
+az deployment group what-if --resource-group  rg_arc_[yournameinitials] --template-file 1storage.bicep --parameters .\config\storageparams.json
+This command will only show you what happens in case of a deployment
+
+Now create the actual resources
+
+az deployment group create  --resource-group  rg_arc_[yournameinitials] --template-file 1storage.bicep --parameters .\config\storageparams.json
+
