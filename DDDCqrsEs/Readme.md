@@ -11,7 +11,7 @@
 7. Open up endpoint /swagger
 
 Login with:
-user: admin@webdotnet.com
+user: admin
 password: P@ssw0rd
 
 The overall diagram of Event sourcing is the following.
