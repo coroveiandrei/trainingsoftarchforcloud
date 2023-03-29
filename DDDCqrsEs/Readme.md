@@ -6,8 +6,8 @@
 2. Deploy SQL Server and DB for Read Models (create a new one than the one in CleanArchitecture). Record the connection string.
 3. Deploy Service Bus for syncronization between read & write model. Record the connection string.
 4. Complete in appsettings.json the connection strings for both web (DDD.CqrsEs.WebUI) and Webjob project (DDD.CqrsEs.WebJob)
-5. Run migrations (from Package manager console, run Update-Database) 
-6. Right click on solution and click set startup projects. Set Multiple: DDD.Cqrs.WebUI and DDD.Cqrs.WebJob.
+5. Right click on solution and click set startup projects. Set Multiple: DDD.Cqrs.WebUI and DDD.Cqrs.WebJob.
+6. Run migrations (from Package manager console, run Update-Database) 
 7. Open up endpoint /swagger
 
 Login with:
