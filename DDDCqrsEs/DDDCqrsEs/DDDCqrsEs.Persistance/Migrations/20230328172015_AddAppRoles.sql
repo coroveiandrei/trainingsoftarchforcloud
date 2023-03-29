@@ -1,0 +1,2 @@
+﻿INSERT INTO [AspNetRoles] (Id, RoleType, Name, NormalizedName,ConcurrencyStamp, Discriminator) VALUES (NEWID(),0, 'Admin', 'ADMIN', 'e8ee3960-a3e4-485f-bf39-7a2e68d057f4', 'ApplicationRole');
+INSERT INTO [AspNetRoles] (Id, RoleType, Name, NormalizedName, ConcurrencyStamp, Discriminator) VALUES (NEWID(),1, 'User', 'USER', '081b4462-5139-4cd0-81a8-fe397947877d', 'ApplicationRole');
