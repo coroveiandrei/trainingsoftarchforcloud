@@ -36,6 +36,8 @@ On the read path, data is read from projections instead of reconstitute from Eve
 The write path should publish the aggregate events on a messaging system. Then, a background process (in our case DDDCQRS.Webjob should subscribe to messages from Service Bus) and update the projections acordingly.
 There is already some code in place, but you need to fill the dots in order to make it work. As first step try to make the publisher work and see that the messages are in the queue of Service Bus. Then, fix the subscriber part.
 
+Please create a queue named StockEvents in the service bus namespace.
+
 ### Challenge #3: Versioning & Concurrency
 In CQRS, since there exist a write and a read model, the syncronization between them is not done instantly. 
 It can happen for example:
