@@ -4,6 +4,7 @@
 1. Clone the repo at https://github.com/coroveiandrei/trainingsoftarchforcloud/tree/main/CleanArchitecture
 2. Open up Visual Studio Community 2022 with .net core 6 installed and build the project
 3. Go to Azure Portal and grab the connection string of Azure SQL DB created last lab. If you don't have it, you can always redeploy the template
+
 Connection string should look like:
 Server=tcp:arcacsqlserver.database.windows.net,1433;Initial Catalog=arcacsqldb;Persist Security Info=False;User ID=andrei;Password=mypass;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 4. In SQL Server also make sure firewall rules are open for your ip address
@@ -16,6 +17,10 @@ Server=tcp:arcacsqlserver.database.windows.net,1433;Initial Catalog=arcacsqldb;P
 11. Try the login endpoint with user: admin and password: P@ssw0rd
 12. Try to add a new ToDo and then list it. If it succeds, the project is fully configured 
 
+
+### Chalenge #0
+
+Inspect the project dependencies and try to figure out where the api call lands initially and then how it is handled at business logic layer. You could additionaly create a small diagram with the dependencies. 
 
 ### Chalenge #1 
 
