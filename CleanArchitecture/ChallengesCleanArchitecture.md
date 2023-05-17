@@ -7,6 +7,7 @@
 
 Connection string should look like:
 Server=tcp:arcacsqlserver.database.windows.net,1433;Initial Catalog=arcacsqldb;Persist Security Info=False;User ID=andrei;Password=mypass;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
 4. In SQL Server also make sure firewall rules are open for your ip address
 5. Go to appsettings.json and replace ToDoDatabase with the connection string above
 6. Right click on CleanArc.WebUI and select Set as Startup Project
