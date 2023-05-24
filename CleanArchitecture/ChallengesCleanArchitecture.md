@@ -53,8 +53,7 @@ Hint3: In configuration configure the connection string to your db
 Hint4: Enable Azure services access to the database from network configuration
 
 ### Challenge #5
-The customer sends you a list of todos in a CSV file in the format
-name, description, userName.
+The customer sends you a list of todos in a CSV file in the format name, description.
 How could you create a background process that will import the file on a regular basis?
 
 Hint: Which projects do you need to reference in the new Background worker process
