@@ -6,7 +6,7 @@
     "sqlServers": {
       "value": [          
           {
-          "name": "arcacsqlserver",
+          "name": "arcacoroveisqlserver",
           "database": "arcacsqldb",
           "username": "andrei",
           "password": "P@ssw0rd98763123",
