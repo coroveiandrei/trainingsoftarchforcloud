@@ -84,11 +84,11 @@ function statement (invoice, plays) {
 }
 ```
 
-#Assignment
-
+# Assignment
+ 
 1. Try to identify places where the class does too much.
 Start by asking yourself the question: “What could change in the future?”
 2. How would you refactor this class? Draw a simple UML diagram with the extracted classes
 
-#Time for assignment
+# Time for assignment
 20 minutes
