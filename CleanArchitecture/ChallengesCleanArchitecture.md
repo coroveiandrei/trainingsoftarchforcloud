@@ -39,7 +39,7 @@ The validation message should be: "There is already an IMPORTANT todo to be reso
 Hint: Scan through the project, find the command validator place, and add a new validation
 
 ### Challenge #3
-The end users want to receive an email when they add a new notification, but just in case, a new field called "ShouldNotify" is sent on True. For the sake of simplicity, that field does not have to be persisted in the database and also you can just call a webhook instead of sending emails. The service INotificationService is already in place, but something is wrong. Can you spot what it is? 
+The end users want to receive an email when they add a new notification, but just in case a new field called "ShouldNotify" is sent on True. For the sake of simplicity, that field does not have to be persisted in the database and also you can just call a webhook instead of sending emails. The service INotificationService is already in place, but something is wrong. Can you spot what it is? 
 
 Hint: In order to use notifications, you can use events.
 
