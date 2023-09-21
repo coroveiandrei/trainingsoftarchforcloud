@@ -23,7 +23,7 @@ Server=tcp:arcacsqlserver.database.windows.net,1433;Initial Catalog=arcacsqldb;P
 
 ### Chalenge #0
 
-Inspect the project dependencies and figure out where the API call lands initially and how it is handled at the business logic layer. You could additionally create a small diagram with the dependencies. 
+Inspect the project dependencies and figure out where the API call lands initially and how it is handled at the business logic layer. 
 
 ### Chalenge #1 
 
