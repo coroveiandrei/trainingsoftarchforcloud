@@ -13,9 +13,10 @@ Server=tcp:arcacsqlserver.database.windows.net,1433;Initial Catalog=arcacsqldb;P
 6. Right-click on CleanArc.WebUI and select Set as Startup Project
 7. Open Package Manager Console and run Update-Database; this should create the database schema
  (if you work on Mac, run: dotnet tool install --global dotnet-ef and dotnet ef database update --project CleanArc.WebUI
-8. Set CleanArc.WebUI as a startup project and run the project
-9. Since there is no UI, please add /swagger in the URL; this will display the swagger page
-10. Try the login endpoint with user: admin and password: P@ssw0rd
+8. From Visual Studio: Set CleanArc.WebUI as a startup project and run the project
+   From VSCode: run dotnet build and then start the project (Run\StartDebugging)
+10. Since there is no UI, please add /swagger in the URL; this will display the swagger page
+11. Try the login endpoint with user: admin and password: P@ssw0rd
 111. Try to add a new ToDo and then list it. If it succeeds, the project is fully configured 
 
 
