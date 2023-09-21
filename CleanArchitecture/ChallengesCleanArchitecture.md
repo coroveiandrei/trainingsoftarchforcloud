@@ -33,13 +33,13 @@ Can you see what is going on?
 Hint: Scan through the project structure from controller to business logic and see where the field is not mapped
 
 ### Challenge #2
-The end users want to add a validation that if there exists an entity in the database with the name IMPORTANT, you should not be allowed to add any other notes containing IMPORTANT in their name.
-The validation message should be: "There is already an IMPORTANT note to be resolved; please resolve that one before adding a new one"
+The end users want to add a validation that if there exists a todo entity in the database with the name IMPORTANT, you should not be allowed to add any other Todo-s containing IMPORTANT in their name.
+The validation message should be: "There is already an IMPORTANT todo to be resolved; please resolve that one before adding a new one"
 
 Hint: Scan through the project, find the command validator place, and add a new validation
 
 ### Challenge #3
-The end users want to receive an email when they add a new notification in case a new field called "Notify" is active. For the sake of simplicity, we will call a webhook for notifications instead of sending emails. The service INotificationService is already in place, but something is wrong with it. Can you spot what it is?
+The end users want to receive an email when they add a new notification, but just in case, a new field called "ShouldNotify" is sent on True. For the sake of simplicity, that field does not have to be persisted in the database and also you can just call a webhook instead of sending emails. The service INotificationService is already in place, but something is wrong. Can you spot what it is? 
 
 Hint: In order to use notifications, you can use events.
 
@@ -48,9 +48,9 @@ Deploy this architecture on an Azure stack and run it on Azure. What services fr
 
 Hint: Right-click publish from Visual Studio and either select your subscription or use the import publish profile option (profile can be downloaded from Azure)
 
-Hint2: In Azure Configuration create a new setting: ASPNETCORE_ENVIRONMENT: DEVELOPMENT
+Hint2: In Azure Configuration, create a new setting: ASPNETCORE_ENVIRONMENT: DEVELOPMENT
 
-Hint3: In configuration, configure the connection string to your db
+Hint3: In configuration, configure the connection string to your DB
 
 Hint4: Enable Azure services access to the database from network configuration
 
