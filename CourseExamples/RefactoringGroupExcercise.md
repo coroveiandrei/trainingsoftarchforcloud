@@ -1,6 +1,6 @@
 # Problem description
 
-Image a company of theatrical players who perform plays at various events. Typically, a customer will request a few plays and the company charges them based on the size of the audience and the kind of play they perform. There are currently two kinds of plays that the company performs: tragedies and comedies. As well as providing a bill for the performance, the company gives its customers “volume credits” which they can use for discounts on future performances—think of it as a customer loyalty mechanism.
+Imagine a company of theatrical players who perform plays at various events. Typically, a customer will request a few plays and the company charges them based on the size of the audience and the kind of play they perform. There are currently two kinds of plays that the company performs: tragedies and comedies. As well as providing a bill for the performance, the company gives its customers “volume credits” which they can use for discounts on future performances—think of it as a customer loyalty mechanism.
 The performers store data about their plays in a simple JSON file that looks something like this:
 
 ```
@@ -94,9 +94,8 @@ You earned 47 credits
 ```
 # Assignment
  
-1. Try to identify places where the class does too much.
-Start by asking yourself the question: “What could change in the future?”
-2. How would you refactor this class? Draw a simple UML diagram with the extracted classes
+1. What are the reasons why this class should change in the future? List 2-3 reasons for change.
+2. Based on what you found in step 1, how would you refactor this class? Draw a simple UML diagram with the extracted classes
 
 # Time for assignment
-20 minutes
+30 minutes
