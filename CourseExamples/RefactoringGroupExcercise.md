@@ -84,7 +84,9 @@ function statement (invoice, plays) {
 }
 ```
 
-```The outcome is:
+The outcome is:
+
+```
 Statement for BigCo
   Hamlet: $650.00 (55 seats)
   As You Like It: $580.00 (35 seats)
