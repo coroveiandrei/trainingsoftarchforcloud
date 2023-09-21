@@ -14,6 +14,7 @@ Server=tcp:arcacsqlserver.database.windows.net,1433;Initial Catalog=arcacsqldb;P
 7. Open Package Manager Console and run Update-Database; this should create the database schema
  (if you work on Mac, run: dotnet tool install --global dotnet-ef and dotnet ef database update --project CleanArc.WebUI
 8. From Visual Studio: Set CleanArc.WebUI as a startup project and run the project
+
    From VSCode: run dotnet build and then start the project (Run\StartDebugging)
 10. Since there is no UI, please add /swagger in the URL; this will display the swagger page
 11. Try the login endpoint with user: admin and password: P@ssw0rd
