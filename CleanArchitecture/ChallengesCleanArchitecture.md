@@ -48,7 +48,7 @@ Deploy this architecture on an Azure stack and run it on Azure. What services fr
 
 Hint: Right-click publish from Visual Studio and either select your subscription or use the import publish profile option (profile can be downloaded from Azure)
 
-Hint2: In configuration configure ASPNETCORE_ENVIRONMENT: DEVELOPMENT
+Hint2: In Azure Configuration create a new setting: ASPNETCORE_ENVIRONMENT: DEVELOPMENT
 
 Hint3: In configuration, configure the connection string to your db
 
