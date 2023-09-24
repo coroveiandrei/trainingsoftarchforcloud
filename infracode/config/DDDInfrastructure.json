@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccounts": {
+      "value": [
+        {
+          "name": "[CHANGEME]stor", 
+          "blobs": [],
+          "shares": [],
+          "queues": [],
+          "tables": [],
+          "kind": "StorageV2",
+          "sku": {
+            "name": "Standard_LRS",
+            "tier": "Standard"
+          },
+          "properties": {
+            "publicNetworkAccess": "Enabled",
+            "networkAcls": {}
+          }
+        }
+      ]
+    },
+    "sqlServers": {
+      "value": [          
+          {
+          "name": "[CHANGEME]sqlserver",
+          "database": "[CHANGEME]db",
+          "username": "andrei",
+          "password": "P@ssw0rd98763123",
+          "publicNetworkAccess": "Enabled"
+          }
+          ]
+        },
+    "serviceBuses": {
+      "value": [
+        {
+          "name": "[CHANGEME]sb",
+          "sku": "Standard"
+        }
+      ]
+    }
+  }
+}
