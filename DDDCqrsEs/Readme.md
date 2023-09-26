@@ -8,25 +8,24 @@ In the file DDDInfrastructure.json, change all [CHANGEME] with appropriate value
 az deployment group create --resource-group  [CHANGEME] --template-file DDDInfrastructure.bicep --parameters .\config\DDDInfrastructure.json
 
 2. Record connection strings:
-Storage account: You can find your storage account's connection strings in the Azure portal. Navigate to Security + networking > Access keys in your storage account's settings to see connection strings for both primary and secondary access keys.
-
-SQL Server: the connection string should be like this (all the options can be found in DDDInfrastructure.json)
+- Storage account: You can find your storage account's connection strings in the Azure portal. Navigate to Security + networking > Access keys in your storage account's settings to see connection strings for  the primary key.
+- SQL Server: the connection string should be like this (all the options can be found in DDDInfrastructure.json)
 Server=tcp:[REPLACE_ME_WITH_SERVERNAME].database.windows.net,1433;Database=[REPLACE_ME_WITH_DATABASENAME];User ID=[REPLACE_ME_WITH_USERNAME];Password=[REPLACE_ME_WITH_PASSWORD];Trusted_Connection=False;Encrypt=True;
-
-Service bus: to record the connection string, navigate to the Service Bus resource in Azure Portal, open up Shared Access Policies, and click on RootManageSharedAccessKey. Then record PrimaryConnectionString.
+- Service bus: to record the connection string, navigate to the Service Bus resource in Azure Portal, open up Shared Access Policies, and click on RootManageSharedAccessKey. Then record PrimaryConnectionString.
 
 3. Navigate to Azure SQL Server resource and add your IP address as exception to the firewall
 4. Now open up DDDCQRSES project from the root of the git folder. Complete in DDDCQRSES.WEBUI\appsettings.json the connection strings recorded at point 2. Do the same for DDDCQRSEs.WebJob\appsettings.json
 5. Open up terminal and run *dotnet build*
-6. run *dotnet tool update --global dotnet-ef*
-change directory (cd) to DDDCQRSEs.WebUI
-run *dotnet ef update-database*
+6. Now it's time to deploy the database schema
+- run *dotnet tool update --global dotnet-ef*
+- change directory (cd) to DDDCQRSEs.WebUI
+- run *dotnet ef database update*
 (This command should create some tables in your SQL database)
-8. In the current terminal
+7. In the current terminal
 - make sure you are in DDDCQRSEs.WebUI folder
 - run dotnet run
-(this will start the Web project)
-9. Since there is no UI, navigate to endpoint*/swagger*
+(this will start the Web project.)
+8. Since there is no UI, navigate to endpoint*/swagger*
 
 Login with:
 user: admin
@@ -36,11 +35,7 @@ The overall diagram of Event sourcing is the following.
 
 ![image](https://user-images.githubusercontent.com/37452422/228434377-247823ba-0591-4df3-8138-898ccc2f5202.png)
 
-Write path goes to EventStore
-
-Read path goes to Projections in SQLserver
-
-Syncronization is done through Service Bus.
+[Replace with SEQUENCE DIAGRAM]
 
 ### Challenge #1: Write path
 In the first challenge we will create the write path. The data will go towards the Event Store in table storage.
