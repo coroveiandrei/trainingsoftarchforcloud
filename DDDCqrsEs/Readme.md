@@ -2,13 +2,31 @@
 
 ### Map & start the solution:
 0. Clone / Refetch the repo and navigate to DDDEventSourcingCQRS project
-1. Deploy Table Storage for Event Sourcing Persitance. Record the connection string.
-2. Deploy SQL Server and DB for Read Models (create a new one than the one in CleanArchitecture). Record the connection string.
-3. Deploy Service Bus for syncronization between read & write model. Record the connection string.
-4. Complete in appsettings.json the connection strings for both web (DDD.CqrsEs.WebUI) and Webjob project (DDD.CqrsEs.WebJob)
-5. Right click on solution and click set startup projects. Set Multiple: DDD.Cqrs.WebUI and DDD.Cqrs.WebJob.
-6. Run migrations (from Package manager console, run Update-Database)  - Set as default project Web.UI
-7. Open up endpoint /swagger
+1. Deploy DDDInfrastructure.bicep using config\DDDInfrastructure.json as config. The template contains Table storage for Event Sourcing Persistence; SQL  Server and DB for Read models a Service Bus resource.
+In the DDDInfrastructure.json, change all [CHANGEME] with appropriate names. Use the following command to create the resources:
+
+az deployment group create --resource-group  [CHANGEME] --template-file DDDInfrastructure.bicep --parameters .\config\DDDInfrastructure.json
+
+2. Record connection strings:
+Storage account: You can find your storage account's connection strings in the Azure portal. Navigate to Security + networking > Access keys in your storage account's settings to see connection strings for both primary and secondary access keys.
+
+SQL Server: the connection string should be like this (all the options can be found in DDDInfrastructure.json)
+Server=tcp:[REPLACE_ME_WITH_SERVERNAME].database.windows.net,1433;Database=[REPLACE_ME_WITH_DATABASENAME];User ID=[REPLACE_ME_WITH_USERNAME];Password=[REPLACE_ME_WITH_PASSWORD];Trusted_Connection=False;Encrypt=True;
+
+Service bus: to record the connection string, navigate to the Service Bus resource in Azure Portal, open up Shared Access Policies, and click on RootManageSharedAccessKey. Then record PrimaryConnectionString.
+
+3. Navigate to Azure SQL Server resource and add your IP address as exception to the firewall
+4. Now open up DDDCQRSES project from the root of the git folder. Complete in DDDCQRSES.WEBUI\appsettings.json the connection strings recorded at point 2. Do the same for DDDCQRSEs.WebJob\appsettings.json
+5. Open up terminal and run *dotnet build*
+6. run *dotnet tool update --global dotnet-ef*
+change directory (cd) to DDDCQRSEs.WebUI
+run *dotnet ef update-database*
+(This command should create some tables in your SQL database)
+8. In the current terminal
+- make sure you are in DDDCQRSEs.WebUI folder
+- run dotnet run
+(this will start the Web project)
+9. Since there is no UI, navigate to endpoint*/swagger*
 
 Login with:
 user: admin
