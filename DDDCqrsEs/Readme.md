@@ -2,8 +2,8 @@
 
 ### Map & start the solution:
 0. Clone / Refetch the repo and navigate to DDDEventSourcingCQRS project
-1. Deploy DDDInfrastructure.bicep using config\DDDInfrastructure.json as config. The template contains Table storage for Event Sourcing Persistence; SQL  Server and DB for Read models and a Service Bus resource.
-In the DDDInfrastructure.json, change all [CHANGEME] with appropriate names. Use the following command to create the resources:
+1. Deploy DDDInfrastructure.bicep using config\DDDInfrastructure.json as config. The template contains Table storage for Event Sourcing Persistence; SQL  Server and DB for Read models, and a Service Bus resource.
+In the file DDDInfrastructure.json, change all [CHANGEME] with appropriate values. Then, use the following command to create the resources:
 
 az deployment group create --resource-group  [CHANGEME] --template-file DDDInfrastructure.bicep --parameters .\config\DDDInfrastructure.json
 
