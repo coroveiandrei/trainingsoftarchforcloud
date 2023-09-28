@@ -40,6 +40,7 @@ In the first challenge, we will create the writing path. A new event will be gen
 There is  already some code in place.  Can you localize and complete it?
 
 Hint: Create a table called EventStore in TableStorage that will serve as a persistence mechanism.
+
 The challenge is complete when the events StockAdded, StockEdited, and StockDeleted are visible in EventStore.
 
 ### Challenge #2: Read path
@@ -47,7 +48,8 @@ In challenge #2, in order to optimize reads, we will read data from projections.
 In order to accomplish this task, we need to publish any events related to the aggregate onto a messaging system. Afterward, a background process (in this case, DDDCQRS.Webjob) should subscribe to messages from the Service Bus and update the projections accordingly. Though some code is already present, you will need to complete the missing parts to make sure it's done properly. As the initial step, focus on making the publisher work and verify that the messages are queued in the Service Bus. Once that is achieved, can you address the subscriber portion?
 
 Hint: Create a queue named StockEvents in the service bus namespace.
-The challenge is complete when you also see the stock being populated in SQL.
+
+The challenge is complete when you see the stock populated in SQL.
 
 ### Challenge #3: Versioning & Concurrency
 In CQRS, since there exists a write and a read model, the synchronization between them takes time (we often call this delta t). In order not to have discrepancies, code needs to be put in place to handle potential lost updates. 
