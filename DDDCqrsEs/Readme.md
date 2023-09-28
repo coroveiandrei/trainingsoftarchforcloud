@@ -31,11 +31,9 @@ Login with:
 user: admin
 password: P@ssw0rd
 
-The overall diagram of Event sourcing is the following.
+The overall sequence diagram:
 
-![image](https://user-images.githubusercontent.com/37452422/228434377-247823ba-0591-4df3-8138-898ccc2f5202.png)
-
-[Replace with SEQUENCE DIAGRAM]
+![image](https://github.com/coroveiandrei/trainingsoftarchforcloud/assets/37452422/f502d235-16cf-48af-8917-fc170f909227)
 
 ### Challenge #1: Write path
 In the first challenge, we will create the writing path. A new event will be generated and stored in the Event Store (Table Storage) whenever there is a web request.
@@ -55,27 +53,29 @@ It can happen, for example:
 User A: has a version of stock 1 
 User B: has a version of stock 1
 
-User A and user B update the version at the same time, both starting from version 1.
+Users Alice and Bob update the version at the same time, both starting from version 1.
 One of the users should succeed, while the other should get "Another user changed data."
 
-![image](https://user-images.githubusercontent.com/37452422/228435273-02659f5f-beb7-4160-9c2e-fa229a06c32c.png)
-
+![image](https://github.com/coroveiandrei/trainingsoftarchforcloud/assets/37452422/4f353a94-3213-4237-b8f1-854eba9da467)
 
 There are two places where this check is done:
-1. In command validator - we should check that the version from projection matches the latest version from the aggregate. If not, data was changed in the meantime.
-2. In the Event Store itself, while saving we get an error if duplicate keys are inserted. If we use versions as the row key and aggregateId as partition key this should do the trick.
+1. In the command validator - we should check that the version from the projection matches the latest version from the aggregate. If not, data was changed in the meantime.
+2. In the Event Store itself, while saving, we get an error if duplicate keys are inserted. If we use the version as the row key and aggregateId as partition key this should do the trick.
 
-Versioning is already in place, your challenge is to implement "data was changed by another user" validation.
+Versioning is already in place; your challenge is to implement the "data was changed by another user" validation.
 
 ### Challenge #4: Deploy to the Cloud
 Now, let's deploy this to the cloud.
 1. Deploy web app to an appservice. 
 See the configurations that you did in CleanArchitecture in order to make it work (configuration settings and firewall rules)
 
-2. Deploy the web job
-There are two options here:
-2.1 You convert the console application to a Webjob project that is deployed with the AppService 
-2.2 You convert the web job to an Azure function that subscribes to the queue and processes the messages.
+2. Deploy the Webjob as an Azure function
+
+You need to create an azure function to the Stock queue and process the messages.
+- Tutorial - Creating an Azure function - https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp
+- Use Service Bus trigger instead of HTTP - https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv5&pivots=programming-language-csharp
+
+
 
 
 
