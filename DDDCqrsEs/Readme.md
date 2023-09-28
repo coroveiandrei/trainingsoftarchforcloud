@@ -1,4 +1,4 @@
-# Clean Architecture Challenges
+# DDD CQRS Event Sourcing Architecture Challenges
 
 ### Map & start the solution:
 0. Clone / Refetch the repo and navigate to DDDEventSourcingCQRS project
