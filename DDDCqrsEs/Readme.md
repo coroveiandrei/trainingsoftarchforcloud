@@ -39,22 +39,19 @@ The overall sequence diagram:
 In the first challenge, we will create the writing path. A new event will be generated and stored in the Event Store (Table Storage) whenever there is a web request.
 There is  already some code in place.  Can you localize and complete it?
 
-Hint #1: Create a table called EventStore in TableStorage that will serve as a persistence mechanism.
+Hint: Create a table called EventStore in TableStorage that will serve as a persistence mechanism.
 The challenge is complete when the events StockAdded, StockEdited, and StockDeleted are visible in EventStore.
 
 ### Challenge #2: Read path
 In challenge #2, in order to optimize reads, we will read data from projections. 
-In order to accomplish this task, we need to publish any events related to the aggregate onto a messaging system. Afterward, a background process (in this case, DDDCQRS.Webjob) should subscribe to messages from the Service Bus and update the projections accordingly. Though some code is already present, you will need to complete the missing parts to ensure it functions properly. As the initial step, focus on making the publisher work and verify that the messages are queued in the Service Bus. Once that is achieved, can you address the subscriber portion?
-Hint #2: Please create a queue named StockEvents in the service bus namespace.
+In order to accomplish this task, we need to publish any events related to the aggregate onto a messaging system. Afterward, a background process (in this case, DDDCQRS.Webjob) should subscribe to messages from the Service Bus and update the projections accordingly. Though some code is already present, you will need to complete the missing parts to make sure it's done properly. As the initial step, focus on making the publisher work and verify that the messages are queued in the Service Bus. Once that is achieved, can you address the subscriber portion?
+
+Hint: Create a queue named StockEvents in the service bus namespace.
+The challenge is complete when you also see the stock being populated in SQL.
 
 ### Challenge #3: Versioning & Concurrency
 In CQRS, since there exists a write and a read model, the synchronization between them takes time (we often call this delta t). In order not to have discrepancies, code needs to be put in place to handle potential lost updates. 
-It can happen, for example:
-User A: has a version of stock 1 
-User B: has a version of stock 1
-
-Users Alice and Bob update the version at the same time, both starting from version 1.
-One of the users should succeed, while the other should get "Another user changed data."
+For example, both Alice and Bob may have version 1 of stock. Then, they both update the version at the same time. One of the users should succeed, while the other should get "Data was changed by another user."
 
 ![image](https://github.com/coroveiandrei/trainingsoftarchforcloud/assets/37452422/4f353a94-3213-4237-b8f1-854eba9da467)
 
