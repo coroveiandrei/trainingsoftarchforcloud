@@ -6,10 +6,16 @@
 DAPR Cli - https://docs.dapr.io/getting-started/install-dapr-cli/
 Docker Desktop - https://www.docker.com/products/docker-desktop/
 3. in a cmd run:  _dapr init_
-4. Follow the steps from the readme of repo ( https://github.com/edwinvw/dapr-traffic-control) at point 1  from the chapter "Run the application in Dapr self-hosted mode"
+4. Follow the steps from the readme of the repo starting here: https://github.com/edwinvw/dapr-traffic-control#start-the-infrastructure-components
 If you have issues with the execution policy, just run:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-4. If you succeed in following the steps, you should be able to see emails with fines poping at http://localhost:4000
+5. If you succeed in following the steps, you should be able to see emails with fines poping at http://localhost:4000
+6. If you are on Mac and you get this error, it is due to a network security issue on Mac. Please run the steps here to run the application with Consul (https://github.com/edwinvw/dapr-traffic-control#running-self-hosted-on-macos-with-antivirus-software) 
+
+`` WARN[0275] encountered a retriable error while publishing a subscribed message to topic speedingviolations, err: retriable error returned from app while processing pub/sub event 6967c339-4aef-4b64-8658-0e0c4689598e, topic: speedingviolations, body: System.AggregateException: One or more errors occurred. (Response status code does not indicate success: 500 (Internal Server Error).)
+ ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken) ``
 
 ### Challenge #1 - Inspect State Store
 
