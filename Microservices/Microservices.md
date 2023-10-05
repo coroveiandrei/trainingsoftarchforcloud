@@ -7,8 +7,10 @@ DAPR Cli - https://docs.dapr.io/getting-started/install-dapr-cli/
 Docker Desktop - https://www.docker.com/products/docker-desktop/
 3. in a cmd run:  _dapr init_
 4. Follow the steps from the readme of the repo starting here: https://github.com/edwinvw/dapr-traffic-control#start-the-infrastructure-components
+
 If you have issues with the execution policy, just run:
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+`` Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass ``
+
 5. If you succeed in following the steps, you should be able to see emails with fines poping at http://localhost:4000
 6. If you are on Mac and you get this error, it is due to a network security issue on Mac. Please run the steps here to run the application with Consul (https://github.com/edwinvw/dapr-traffic-control#running-self-hosted-on-macos-with-antivirus-software) 
 
