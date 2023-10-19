@@ -41,16 +41,13 @@ Hint: To use notifications, you can inspect the events' infrastructure.
 Deploy this architecture on an Azure stack and run it on Azure. What services from the ones created previously would you need?
 
 Hint: Right-click publish from Visual Studio and either select your subscription or use the import publish profile option (profile can be downloaded from Azure)
-
-Hint2: In Azure Configuration, create a new setting: ASPNETCORE_ENVIRONMENT: DEVELOPMENT
-
-Hint3: In the configuration, configure the connection string to your DB
-
-Hint4: Enable Azure services access to the database from network configuration
+In Azure Configuration, create a new setting: ASPNETCORE_ENVIRONMENT: DEVELOPMENT
+In AppService Configuration, configure the connection string to your DB
+Enable Azure services access to the database from network configuration
 
 ### Challenge #4
 The customer sends you a list of todos in a CSV file in the format name description.
-How could you create a background process that will import the file on a regular basis?
+How could you create a background process that will import the file regularly?
 
 Hint: Which projects do you need to reference in the new Background worker process
 
