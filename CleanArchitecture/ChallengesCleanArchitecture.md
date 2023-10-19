@@ -41,8 +41,11 @@ Hint: To use notifications, you can inspect the events' infrastructure.
 Deploy this architecture on an Azure stack and run it on Azure. What services from the ones created previously would you need?
 
 Hint: Right-click publish from Visual Studio and either select your subscription or use the import publish profile option (profile can be downloaded from Azure)
+
 In Azure Configuration, create a new setting: ASPNETCORE_ENVIRONMENT: DEVELOPMENT
+
 In AppService Configuration, configure the connection string to your DB
+
 Enable Azure services access to the database from network configuration
 
 ### Challenge #4
