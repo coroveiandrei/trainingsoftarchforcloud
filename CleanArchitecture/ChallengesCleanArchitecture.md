@@ -2,11 +2,11 @@
 
 ### Map & start the solution:
 1. Clone the repo at https://github.com/coroveiandrei/trainingsoftarchforcloud/tree/main/CleanArchitecture
-2. Open up Visual Studio Community 2022 with .net core 6 installed and build the project
+2. Open up Visual Studio Community 2022 / VS Code with .net core 6 installed and build the project 
 3. Go to Azure Portal and grab the connection string of Azure SQL DB created in the last lab. If you don't have it, you can always redeploy the template
 
 The connection string should look like this:
-Server=tcp:arcacsqlserver.database.windows.net,1433;Initial Catalog=arcacsqldb;Persist Security Info=False;User ID=andrei;Password=[CHANGEME];MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+Server=tcp:[CHANGEMESERVER].database.windows.net,1433;Initial Catalog=arcacsqldb;Persist Security Info=False;User ID=andrei;Password=[CHANGEME];MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
 4. In SQL Server also make sure firewall rules are open for your ip address
 5. Go to appsettings.json and replace ToDoDatabase with the connection string above
