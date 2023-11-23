@@ -16,16 +16,11 @@ Server=tcp:[REPLACE_ME_WITH_SERVERNAME].database.windows.net,1433;Database=[REPL
 3. Navigate to Azure SQL Server resource and add your IP address as exception to the firewall
 4. Now open up DDDCQRSES project from the root of the git folder. Complete in DDDCQRSES.WEBUI\appsettings.json the connection strings recorded at point 2. Do the same for DDDCQRSEs.WebJob\appsettings.json
 5. Open up terminal and run *dotnet build*
-6. Now it's time to deploy the database schema
-- run *dotnet tool update --global dotnet-ef*
-- change directory (cd) to DDDCQRSEs.WebUI
-- run *dotnet ef database update*
-(This command should create some tables in your SQL database)
-7. In the current terminal
+6. In the current terminal
 - make sure you are in DDDCQRSEs.WebUI folder
 - run dotnet run
 (this will start the Web project.)
-8. Since there is no UI, navigate to endpoint*/swagger*
+7. Since there is no UI, navigate to https://localhost:[port]/*/swagger*
 
 Login with:
 user: admin
